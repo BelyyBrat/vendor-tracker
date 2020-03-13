@@ -31,9 +31,9 @@ namespace VendorTracker.Tests
     public void FindOrder_FindOrderByProvidedId_Order()
     {
       Vendor Bob = new Vendor("Bob", "Bob from 5th avenue");
-      Order OrderOne = new Order ("OrderOne", "First order", 5, new DateTime (2019, 2, 2));
-      Order OrderTwo = new Order ("OrderOne", "First order", 5, new DateTime (2019, 2, 3));
-      Order OrderThree = new Order ("OrderOne", "First order", 5, new DateTime (2019, 2, 4));
+      Order OrderOne = new Order ("OrderOne", "First order", 5, new DateTime (2019, 2, 3));
+      Order OrderTwo = new Order ("OrderOne", "First order", 4, new DateTime (2019, 2, 4));
+      Order OrderThree = new Order ("OrderOne", "First order", 3, new DateTime (2019, 2, 5));
 
       Bob.AddOrder(OrderOne);
       Bob.AddOrder(OrderTwo);

@@ -17,7 +17,7 @@
   @foreach (Vendor company in Model)
   {
     <li>
-      <a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description) 
+      <p><a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description)</p>
       <form action="/vendors/@company.VendorId/delete" method="post">
         <input name="vendorid" type="hidden" value="@company.VendorId">
         <button type="submit">Delete</button>
