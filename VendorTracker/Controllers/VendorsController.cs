@@ -52,17 +52,19 @@ namespace VendorTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/vendors/neworder")]
-    public ActionResult NewOrder()
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, DateTime orderDate )
     {
-      return View();
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.FindVendor(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.AllVendorOrders;
+      model.Add("vendor", foundVendor);
+      model.Add("orders", vendorOrders);
+      return View("ShowVendor", model);
     }
 
-    [HttpPost("/vendors/{number}")]
-    public ActionResult Create(string name, string description, int price, DateTime orderDate)
-    {
-      Order newOrder = new Order(name, description, price, orderDate);
-      return RedirectToAction("Index/{number}");
-    }             
+       
   }
 }
