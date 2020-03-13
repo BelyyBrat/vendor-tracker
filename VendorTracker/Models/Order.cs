@@ -10,15 +10,15 @@ namespace VendorTracker.Models
     public int Price {get; set;}
 
     public int OrderId {get; }
-    public DateTime OrderDate = new DateTime();
+    // public DateTime OrderDate = new DateTime();
     private static List <Order> _allOrders = new List <Order> {};
 
-    public Order (string title, string description, int price, DateTime orderDate)
+    public Order (string title, string description, int price)
     {
       Title = title;
       Description = description;
       Price = price;
-      OrderDate = orderDate;
+      // OrderDate = orderDate;
       _allOrders.Add(this);
       OrderId = _allOrders.Count;
     }
