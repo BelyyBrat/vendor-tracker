@@ -20,6 +20,7 @@ namespace VendorTracker.Models
       VendorId = _allVendors.Count;
       AllVendorOrders = new List <Order> {};
       VendorOrderId = AllVendorOrders.Count;
+      _allVendors.Add(this);
     }
 
     public static List <Vendor> GetVendors()

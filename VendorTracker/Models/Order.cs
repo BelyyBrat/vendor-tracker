@@ -8,15 +8,17 @@ namespace VendorTracker.Models
     public string Title {get; set;}
     public string Description {get; set;}
     public int Price {get; set;}
-    public DateTime Date = new DateTime();
+    public DateTime OrderDate = new DateTime();
     public int AllOrderId {get; } 
     private static List <Order> _allOrders = new List <Order> {};
 
-    public Order (string title, string description)
+    public Order (string title, string description, int price, DateTime orderDate)
     {
       Title = title;
       Description = description;
       AllOrderId = _allOrders.Count;
+      Price = price;
+      OrderDate = orderDate;
     }
 
     public static List<Order> GetOrders()
