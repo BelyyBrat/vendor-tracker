@@ -25,6 +25,33 @@ namespace VendorTracker.Controllers
     {
       Vendor newVendor = new Vendor(name, description);
       return RedirectToAction("Index");
-    }     
+    }
+
+    [HttpPost("/vendors/deleteall")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.DeleteAllVendors();
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult ShowVendor(int number)
+    {
+      Vendor foundVendor = Vendor.FindVendor(number);
+      return View(foundVendor);
+    }
+
+    [HttpPost("/vendors/{id}/delete")]
+    public ActionResult DeleteVendor(string number)
+    {
+      Vendor.DeleteVendor(int.Parse(number));
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/neworder")]
+    public ActionResult NewOrder()
+    {
+      return View();
+    }         
   }
 }

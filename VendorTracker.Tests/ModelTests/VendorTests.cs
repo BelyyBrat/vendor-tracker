@@ -5,4 +5,19 @@ using System;
 
 namespace VendorTracker.Tests
 {
+
+  public class VendorTest: IDisposable
+  {
+
+    public void Dispose()
+    {
+      Vendor.DeleteAllVendors();
+    }
+
+    [TestMethod]
+    public void FindVendor_FindVendorByProvidedId_Vendor()
+    {
+
+    }
+  }
 }

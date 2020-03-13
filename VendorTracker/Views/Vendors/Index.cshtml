@@ -16,17 +16,20 @@
   @foreach (Vendor company in Model)
   {
     <li>
-      @company.Name (@company.Description);
+      <a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description) 
+      <form action="/vendors/@company.VendorId/delete" method="post">
+        <input name="VendorId" type="hidden" value="@company.VendorId">
+        <button type="submit">Delete</button>
+      </form>
     </li>
   }
 </ol>
+
+<form action="/vendors/deleteall" method="post">
+  <button type="submit" name="button">Clear All Places</button>
+</form>
 
 <p><a href='/'>Back to main page</a></p>
 
 
 
-      @* <a href='/vendors/@company.VendorId'>@company.Name</a>
-      <form action="/vendors/@company.VendorId/delete" method="post">
-        <input name="Id" type="hidden" value="@company.VendorId">
-        <button type="submit">Delete</button>
-      </form> *@
