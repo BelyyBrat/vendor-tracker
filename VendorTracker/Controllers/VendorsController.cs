@@ -34,14 +34,14 @@ namespace VendorTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/vendors/{id}")]
+    [HttpGet("/vendors/{number}")]
     public ActionResult ShowVendor(int number)
     {
       Vendor foundVendor = Vendor.FindVendor(number);
       return View(foundVendor);
     }
 
-    [HttpPost("/vendors/{id}/delete")]
+    [HttpPost("/vendors/{number}/delete")]
     public ActionResult DeleteVendor(string number)
     {
       Vendor.DeleteVendor(int.Parse(number));

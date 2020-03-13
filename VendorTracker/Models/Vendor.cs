@@ -7,20 +7,21 @@ namespace VendorTracker.Models
   {
     public string Name {get; set;}
     public string Description {get; set;}
+    private static List <Vendor> _allVendors = new List <Vendor> {};
+
     public int VendorId {get;} 
     public int VendorOrderId {get; } 
    
-    private static List <Vendor> _allVendors = new List <Vendor> {};
     public List <Order> AllVendorOrders {get; set;}
 
     public Vendor (string name, string description)
     {
       Name = name;
       Description = description;
-      VendorId = _allVendors.Count;
       AllVendorOrders = new List <Order> {};
       VendorOrderId = AllVendorOrders.Count;
       _allVendors.Add(this);
+      VendorId = _allVendors.Count;
     }
 
     public static List <Vendor> GetVendors()
