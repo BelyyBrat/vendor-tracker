@@ -18,16 +18,19 @@
     <li>
       <a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description) 
       <form action="/vendors/@company.VendorId/delete" method="post">
-        <input name="VendorId" type="hidden" value="@company.VendorId">
+        <input name="vendorid" type="hidden" value="@company.VendorId">
         <button type="submit">Delete</button>
       </form>
     </li>
   }
 </ol>
 
+<p><a href='/vendors/newvendor'>Add a new vendor</a></p>
+
 <form action="/vendors/deleteall" method="post">
-  <button type="submit" name="button">Clear All Places</button>
+  <button type="submit" name="button">Delete All Vendors</button>
 </form>
+
 
 <p><a href='/'>Back to main page</a></p>
 
