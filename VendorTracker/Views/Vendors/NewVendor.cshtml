@@ -1,0 +1,25 @@
+@{
+  ViewBag.Title = "Vendor and Order Tracker";
+  Layout = "_Layout";
+}
+
+<div class="jumbotron">
+<h5>Add new vendor to Vendor and Order Tracker</h5>
+</div>
+
+<div class="form">
+  <form action="/vendors" method="post">
+    <div class="form-group">
+      <label for="name">Add vendor's name:</label>
+      <input id="name" name="name" type="text">
+    </div>
+    <div class="form-group">
+      <label for="description">Add vendor's description:</label>
+      <input class="form-control" id="description" name="description" type="text">
+    </div>
+    <button type="submit">Add Vendor</button>
+  </form>
+</div>
+
+
+<p><a href='/'>Back to main page</a></p>
