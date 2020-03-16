@@ -24,6 +24,5 @@ namespace VendorTracker.Controllers
       Vendor vendor = Vendor.FindVendor(vendorId);
       return View(vendor);
     }
-
   }
 }
