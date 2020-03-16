@@ -28,7 +28,7 @@ namespace VendorTracker.Controllers
     }
 
     [HttpPost("/vendors/deleteall")]
-    public ActionResult DeleteAll()
+    public ActionResult DeleteAllVendors()
     {
       Vendor.DeleteAllVendors();
       return RedirectToAction("Index");
@@ -66,12 +66,12 @@ namespace VendorTracker.Controllers
     }
 
     [HttpPost("/vendors/{number}/deleteall")]
-    public ActionResult DeleteAll(int number)
+    public ActionResult DeleteAllOrders(int number)
     {
       Vendor foundVendor = Vendor.FindVendor(number);
       List<Order> vendorOrders = foundVendor.AllVendorOrders;
       vendorOrders.Clear();
       return RedirectToAction("ShowVendor");
-    }   
+    }
   }
 }

@@ -47,6 +47,11 @@ namespace VendorTracker.Models
       return _allVendors[number-1];
     }
 
+    public void DeleteOrder(int number)
+    {
+      AllVendorOrders.RemoveAt(number-1);
+    }
+
     public void AddOrder (Order order)
     {
       AllVendorOrders.Add(order);
