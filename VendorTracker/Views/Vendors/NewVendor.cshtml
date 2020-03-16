@@ -4,9 +4,9 @@
 }
 
 <div class="jumbotron">
-<h3>Add a New Vendor</h3>
+<h1>Add a New Vendor</h1>
 </div>
-
+<img src="~/img/03.jpg" class="img-fluid"> 
 <div class="form">
   <form action="/vendors" method="post">
     <div class="form-group">
@@ -17,9 +17,15 @@
       <label for="description">Add vendor's description:</label>
       <input class="form-control" id="description" name="description" type="text">
     </div>
-    <button type="submit">Add Vendor</button>
+    <button class="btn btn-secondary btn-lg" type="submit">Add Vendor</button>
   </form>
 </div>
 
-<p><a href='/vendors'>See list of vendors</a></p>
-<p><a href='/'>Back to main page</a></p>
+<div class="links">
+  <div class="link">
+    <p><a href='/vendors'>See list of vendors</a></p>
+  </div>
+  <div class="link">
+    <p><a href='/'>Back to main page</a></p>
+  </div>
+</div>

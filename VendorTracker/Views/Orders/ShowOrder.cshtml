@@ -8,6 +8,8 @@
 <div class="jumbotron">
 <h1>Vendor @Model["vendor"].Name, @Model["order"].Title</h1>
 </div>
-<h5>Description: @Model["order"].Description</h5>
-<h5>Price: @Model["order"].Price $</h5>
-<h5>Date: @Model["order"].OrderDate </h5>
+<h2>Description: @Model["order"].Description</h2>
+<div class="content">
+  <p>Price: @Model["order"].Price $</p>
+  <p>Date: @Model["order"].OrderDate </p>
+</div>

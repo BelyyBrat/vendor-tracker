@@ -6,34 +6,39 @@
 }
 
 <div class="jumbotron">
-<h5>Pierre's Bakery Vendors</h5>
+<h1>Pierre's Bakery Vendors</h1>
 </div>
-<img src="~/img/02.jpg" class="img-fluid"> 
-@if (Model.Count == 0)
-{
-  <p>There are no vendors in Pierre's Bakery yet.</p>
-}
-<ol>
-  @foreach (Vendor company in Model)
+<img src="~/img/02.jpg" class="img-fluid">
+<div class="content">
+  @if (Model.Count == 0)
   {
-    <li>
-      <p><a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description)</p>
-      <form action="/vendors/@company.VendorId/delete" method="post">
-        <input name="vendorid" type="hidden" value="@company.VendorId">
-        <button type="submit">Delete</button>
-      </form>
-    </li>
+    <p>There are no vendors in Pierre's Bakery yet.</p>
   }
-</ol>
-
-<p><a href='/vendors/newvendor'>Add a new vendor</a></p>
+  <ol>
+    @foreach (Vendor company in Model)
+    {
+      <li>
+        <p><a href='/vendors/@company.VendorId'>@company.Name</a> (@company.Description)</p>
+        <form action="/vendors/@company.VendorId/delete" method="post">
+          <input name="vendorid" type="hidden" value="@company.VendorId">
+          <button class="btn btn-secondary btn-sm" type="submit">Delete Vendor</button>
+        </form>
+      </li>
+    }
+  </ol>
+</div>
 
 <form action="/vendors/deleteall" method="post">
-  <button type="submit" name="button">Delete All Vendors</button>
+  <button class="btn btn-secondary btn-lg" type="submit" name="button">Delete All Vendors</button>
 </form>
 
-
-<p><a href='/'>Back to main page</a></p>
-
+<div class="links">
+  <div class="link">
+    <p><a href='/vendors/newvendor'>Add a new vendor</a></p>
+  </div>
+  <div class="link">
+    <p><a href='/'>Back to main page</a></p>
+  </div>
+</div>
 
 
